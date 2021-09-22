@@ -10,7 +10,7 @@ CREATE TABLE `member` (
   `is_committee_member` boolean,
   `committee_type` ENUM ('boat_committee'),
   `office_type` ENUM ('boat_office'),
-  `annual_dues_total` int,
+  `annual_dues` int,
   `boat_id` int,
   `slip_id` int
 );
