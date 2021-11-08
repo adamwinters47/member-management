@@ -1,8 +1,8 @@
 package com.winters.membermanagement.repository;
 
-import com.winters.membermanagement.entities.Member;
+import com.winters.membermanagement.entities.Dock;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface MemberRepository extends CrudRepository<Member, Long> {}
+public interface DockRepository extends CrudRepository<Dock, Long> {}

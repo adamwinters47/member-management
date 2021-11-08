@@ -39,8 +39,6 @@ public class Member {
     private CommitteeType committeeType;
     private OfficeType officeType;
     private double annualDues;
-    @OneToMany(mappedBy = "id")
-    private List<Boat> boats;
 
 
 }

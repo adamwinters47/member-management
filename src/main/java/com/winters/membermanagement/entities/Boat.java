@@ -9,6 +9,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,6 +26,7 @@ public class Boat {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    private String boatName;
     private int length;
     private int beam;
     private int depth;
@@ -32,5 +35,7 @@ public class Boat {
     private boolean isCityRegistrationCurrent;
     @OneToOne
     Slip slip;
+    @ManyToOne
+    private Member member;
 
 }

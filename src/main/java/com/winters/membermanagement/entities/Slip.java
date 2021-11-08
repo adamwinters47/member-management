@@ -32,6 +32,8 @@ public class Slip {
     @OneToOne
     @JoinColumn(name = "dock_id", referencedColumnName = "id")
     Dock dock;
+    @OneToOne
+    Boat boat;
 
 
 }
