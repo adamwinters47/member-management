@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 import java.util.List;
 
 @Entity
@@ -30,15 +31,39 @@ public class Member {
     private String firstName;
     private String lastName;
     private String address;
-    private String phone;
+    private String cellPhone;
+    private String homePhone;
+    private String officePhone;
     @Column(nullable = false, unique = true)
     private String email;
     private String spouseName;
+    private String spousePhone;
+    private String spouseEmail;
+    private String childrenNames;
     private boolean isOfficeMember;
     private boolean isCommitteeMember;
-    private CommitteeType committeeType;
-    private OfficeType officeType;
+    private String committeeType;
+    private String officeType;
     private double annualDues;
+    @Transient
+    private List<Boat> boatList;
+
+    public void setIsCommitteemember(boolean isCommitteeMember) {
+        this.isCommitteeMember = isCommitteeMember;
+    }
+
+    public boolean getIsCommitteeMember(){
+        return this.isCommitteeMember;
+    }
+
+    public void setIsOfficeMember(boolean isOfficeMember) {
+        this.isOfficeMember = isOfficeMember;
+    }
+
+    public boolean getIsOfficeMember(){
+        return this.isOfficeMember;
+    }
+
 
 
 }

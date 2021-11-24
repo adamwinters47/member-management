@@ -27,6 +27,7 @@ public class Boat {
     private Long id;
 
     private String boatName;
+    private String boatModel;
     private int length;
     private int beam;
     private int depth;
@@ -37,5 +38,25 @@ public class Boat {
     Slip slip;
     @ManyToOne
     private Member member;
+
+    public void setIsBoatRegistrationCurrent(boolean isBoatRegistrationCurrent){
+        this.isBoatRegistrationCurrent = isBoatRegistrationCurrent;
+    }
+
+    public boolean getIsBoatRegistrationCurrent(){
+        return this.isBoatRegistrationCurrent;
+    }
+
+    public void setIsCityRegistrationCurrent(boolean isCityRegistrationCurrent) {
+        this.isCityRegistrationCurrent = isCityRegistrationCurrent;
+    }
+
+    public boolean getIsCityRegistrationCurrent() {
+        return this.isCityRegistrationCurrent;
+    }
+
+    public long getMemberId() {
+        return this.member.getId();
+    }
 
 }
