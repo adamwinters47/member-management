@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -40,24 +41,12 @@ public class MemberService {
 
     public List<Member> getAllMembers(){
         List<Member> memberList = (List<Member>) memberRepository.findAll();
-        //TODO: Fix this dogshit
-//        List<Boat> boatList = (List<Boat>) boatRepository.findAll();
-//        Map<Long, List<Boat>> boatMapByMemberId = assembleBoatMap(boatList);
-//        for(Member member : memberList) {
-//            if(member.getBoatList() == null) {
-//                member.setBoatList(new ArrayList<>());
-//            }
-//            if(boatMapByMemberId.containsKey(member.getId())){
-//                for(Boat boat: boatMapByMemberId.get(member.getId())){
-//                    List<Boat> boats = member.getBoatList();
-//                    boats.add(boat);
-//                    member.setBoatList(boats);
-//                }
-//            }
-//            for(Boat boat: member.getBoatList()){
-//                boat.setMember(null);
-//            }
-//        }
+        Collections.sort(memberList, new Comparator<Member>() {
+            @Override
+            public int compare(Member o1, Member o2) {
+                return o1.getLastName().compareToIgnoreCase(o2.getLastName());
+            }
+        });
         return memberList;
     }
 
