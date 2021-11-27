@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 
 @Entity
 @Table(name = "slip")
@@ -26,9 +27,9 @@ public class Slip {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private int length;
-    private int width;
-    private SlipType slipType;
+    private BigDecimal length;
+    private BigDecimal width;
+    private String slipType;
     @OneToOne
     @JoinColumn(name = "dock_id", referencedColumnName = "id")
     Dock dock;
