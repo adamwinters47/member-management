@@ -1,11 +1,12 @@
 package com.winters.membermanagement.entities;
 
-import com.winters.membermanagement.enums.SlipType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,15 +27,15 @@ public class Slip {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    private Integer slipNum;
     private BigDecimal length;
     private BigDecimal width;
     private String slipType;
+    @Column(columnDefinition = "boolean default false")
+    private boolean isAssigned;
     @OneToOne
     @JoinColumn(name = "dock_id", referencedColumnName = "id")
     Dock dock;
-    @OneToOne
-    Boat boat;
 
 
 }

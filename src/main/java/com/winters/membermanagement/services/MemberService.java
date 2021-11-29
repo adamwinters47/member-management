@@ -41,12 +41,7 @@ public class MemberService {
 
     public List<Member> getAllMembers(){
         List<Member> memberList = (List<Member>) memberRepository.findAll();
-        Collections.sort(memberList, new Comparator<Member>() {
-            @Override
-            public int compare(Member o1, Member o2) {
-                return o1.getLastName().compareToIgnoreCase(o2.getLastName());
-            }
-        });
+        memberList.sort((o1, o2) -> o1.getLastName().compareToIgnoreCase(o2.getLastName()));
         return memberList;
     }
 

@@ -45,6 +45,13 @@ public class BoatService {
         }
     }
 
+    public Boat assignSlip(Long slipId) {
+        //TODO: Pull Slip from slip repo, change isAssigned to True, save slip, save Boat with new slip
+        return new Boat();
+    }
+
+    //TODO: removeSlip does opposite of assignSlip
+
     public boolean deleteBoatById(Long id) {
         boatRepository.deleteById(id);
         return boatRepository.existsById(id);

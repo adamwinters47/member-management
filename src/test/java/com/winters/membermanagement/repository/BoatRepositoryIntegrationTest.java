@@ -43,8 +43,8 @@ public class BoatRepositoryIntegrationTest {
         assertThat(returnedBoat.getDepth()).isNotNull();
         assertThat(returnedBoat.getLength()).isNotNull();
         assertThat(returnedBoat.getRegistration()).isNotNull();
-        assertThat(returnedBoat.isBoatRegistrationCurrent()).isNotNull();
-        assertThat(returnedBoat.isCityRegistrationCurrent()).isNotNull();
+        assertThat(returnedBoat.getIsBoatRegistrationCurrent()).isNotNull();
+        assertThat(returnedBoat.getIsCityRegistrationCurrent()).isNotNull();
         assertThat(returnedBoat.getSlip()).isNotNull();
     }
 }
