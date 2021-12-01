@@ -45,8 +45,6 @@ public class Member {
     private String committeeType;
     private String officeType;
     private double annualDues;
-    @Transient
-    private List<Boat> boatList;
 
     public void setIsCommitteemember(boolean isCommitteeMember) {
         this.isCommitteeMember = isCommitteeMember;

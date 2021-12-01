@@ -1,5 +1,6 @@
 package com.winters.membermanagement.controllers;
 
+import com.winters.membermanagement.dto.MemberDirectoryEntry;
 import com.winters.membermanagement.entities.Member;
 import com.winters.membermanagement.enums.CommitteeType;
 import com.winters.membermanagement.enums.OfficeType;
@@ -70,6 +71,12 @@ class MemberController {
     public @ResponseBody
     ResponseEntity<List<Member>> getAllMembers(){
         return new ResponseEntity<>(memberService.getAllMembers(), HttpStatus.OK);
+    }
+
+    @GetMapping(value="/getEntries")
+    public @ResponseBody
+    ResponseEntity<List<MemberDirectoryEntry>> getAllMemberEntries(){
+        return new ResponseEntity<>(memberService.getAllDirectoryEntries(), HttpStatus.OK);
     }
 
     @DeleteMapping(value="/remove/{id}")
