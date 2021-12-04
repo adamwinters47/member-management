@@ -44,6 +44,7 @@ public class Member {
     private boolean isCommitteeMember;
     private String committeeType;
     private String officeType;
+    private String yearOfficeHeld;
     private double annualDues;
 
     public void setIsCommitteemember(boolean isCommitteeMember) {

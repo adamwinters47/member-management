@@ -28,6 +28,7 @@ public class MemberDirectoryEntry {
     private boolean isCommitteeMember;
     private String committeeType;
     private String officeType;
+    private String yearOfficeHeld;
     private List<BoatDirectoryEntry> boatList;
 
 
