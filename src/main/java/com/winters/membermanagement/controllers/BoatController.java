@@ -24,7 +24,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/boat")
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://boatclubmanagement.s3.amazonaws.com/")
 class BoatController {
 
     @Autowired

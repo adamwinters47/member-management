@@ -22,7 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://boatclubmanagement.s3.amazonaws.com/")
 @RequestMapping("/member")
 class MemberController {
 
